@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/malikin/jared.svg?branch=master)](https://travis-ci.org/malikin/jared)
+[![Build Status](https://travis-ci.org/malikin/blitz-statistics.svg?branch=master)](https://travis-ci.org/malikin/blitz-statistics)

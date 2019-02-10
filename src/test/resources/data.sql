@@ -1,3 +1,3 @@
-insert into event (name, external_uid) values ('testName0', 2000);
+insert into event (id, name, external_uid) values (hibernate_sequence.nextval, 'testName0', 2000);
 
-insert into event (name, external_uid) values ('testName1', 2001);
+insert into event (id, name, external_uid) values (hibernate_sequence.nextval, 'testName1', 2001);

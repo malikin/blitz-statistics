@@ -31,7 +31,7 @@ public class EventController {
         return repository.findByExternalUid(externalUid);
     }
 
-    @PostMapping("")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void postNewEvent(@Valid @RequestBody Event event) {
         eventService.createOrIncrement(event);

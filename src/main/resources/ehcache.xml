@@ -9,7 +9,7 @@
         <key-type>java.lang.Long</key-type>
         <value-type>java.util.ArrayList</value-type>
         <expiry>
-            <ttl unit="hours">8</ttl>
+            <ttl unit="seconds">10</ttl>
         </expiry>
         <resources>
             <heap unit="entries">10000</heap>

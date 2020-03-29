@@ -3,6 +3,7 @@ package malikin.github.io.blitz.statistics.service;
 import malikin.github.io.blitz.statistics.dao.EventRepository;
 import malikin.github.io.blitz.statistics.entity.Event;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,8 +12,16 @@ import java.util.List;
 @Service
 public class EventService {
 
-    @Autowired
-    private EventRepository eventRepository;
+    private final EventRepository eventRepository;
+
+    public EventService(EventRepository eventRepository) {
+        this.eventRepository = eventRepository;
+    }
+
+    @Cacheable(value = "events", key="#externalUid")
+    public List<Event> findByExternalUid(Long externalUid) {
+        return eventRepository.findByExternalUid(externalUid);
+    }
 
     @Transactional
     public void createOrIncrement(final Event event) {

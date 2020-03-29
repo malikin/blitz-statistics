@@ -1,7 +1,6 @@
 package malikin.github.io.blitz.statistics;
 
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,11 +19,6 @@ public class ControllerTests {
 
     @LocalServerPort
     private int port;
-
-    @Test
-    public void getNotesList() {
-        given().when().get(HOST + ":" + port + "/events").then().statusCode(HttpStatus.OK.value());
-    }
 
     @Test
     public void postNewNoteAndGet() {
